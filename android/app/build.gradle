@@ -23,6 +23,9 @@ if (flutterVersionName == null) {
 }
 
 android {
+    defaultconfig{
+        multiDexEnabled true
+    }
     namespace "com.example.untitled"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
@@ -64,4 +67,6 @@ flutter {
     source '../..'
 }
 
-dependencies {}
+dependencies {
+    implementation 'com.android.support:multidex:1.0.3'
+}
