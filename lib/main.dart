@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:untitled/layout/home_layout.dart';
 import 'package:untitled/screens/settings/settings_tab.dart';
 import 'package:untitled/shared/styles/my_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async{
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
