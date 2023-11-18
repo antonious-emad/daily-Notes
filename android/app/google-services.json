@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "469672811881",
+    "project_id": "daily-notes-app-40324",
+    "storage_bucket": "daily-notes-app-40324.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469672811881:android:6bfe5f26f37c114d32b1f8",
+        "android_client_info": {
+          "package_name": "com.example.untitled"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHHxZnfSEr1AoUM9CrPzxaf9XsgfzpCOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
