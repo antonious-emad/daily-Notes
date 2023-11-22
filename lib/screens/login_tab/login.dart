@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:untitled/base.dart';
 import 'package:untitled/screens/login_tab/connector.dart';
 import 'package:untitled/screens/login_tab/login_view_model.dart';
 
@@ -15,25 +16,24 @@ class LoginTab extends StatefulWidget {
   State<LoginTab> createState() => _LoginTabState();
 }
 
-class _LoginTabState extends State<LoginTab>  implements LoginConnector{
+class _LoginTabState extends BaseView<LoginViewModel,LoginTab>  implements LoginConnector{
 var formKey=GlobalKey<FormState>();
 
   var emailController = TextEditingController();
 
   var passwordController = TextEditingController();
 
-  LoginViewModel viewModel=LoginViewModel();
 @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    viewModel.loginConnector=this;
+    viewmodel.connector=this;
   }
   @override
   Widget build(BuildContext context) {
     var provider=Provider.of<MyProvider>(context);
     return ChangeNotifierProvider(
-      create: (context) => viewModel,
+      create: (context) => viewmodel,
       builder: (context, child) => Padding(
         padding: const EdgeInsets.all(20.0),
         child: Container(
@@ -69,7 +69,7 @@ var formKey=GlobalKey<FormState>();
                       color: Colors.blue, borderRadius: BorderRadius.circular(20)),
                   child: ElevatedButton(
                     onPressed: () {
-                      viewModel.loginUser(
+                      viewmodel.loginUser(
                           emailController.text,
                           passwordController.text,
                       //         () {
@@ -172,5 +172,16 @@ showDialog(
           }, child: Text("Thanks")),
         ],
       ),);
+  }
+
+  @override
+  LoginViewModel inintMyViewModel() {
+  return LoginViewModel();
+  }
+
+  @override
+  showmessage(String message) {
+    // TODO: implement showmessage
+    throw UnimplementedError();
   }
 }
