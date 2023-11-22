@@ -72,7 +72,7 @@ class TaskItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("${task.title}",style: task.isDone? TextStyle(color: Colors.green):TextStyle(color: primaryColor) ,),
-                    Text("${task .description}"),
+                    Text("${task .description}",style: task.isDone? TextStyle(color: Colors.green):TextStyle(color: primaryColor) ,),
                   ],
                 ),
                 Spacer(),

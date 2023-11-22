@@ -91,18 +91,18 @@ static createUser(int age, String name, String email, String password, Function 
     print(e);
   }
 }
-static void loginUser(String email, String password, Function onSuccess, Function onError) async {
-  try {
-    final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
-    credential.user!.sendEmailVerification();
-    if(credential.user?.uid!=null){
-      if(credential.user!.emailVerified){onSuccess();}
-      else{onError("Please Veritify Your Mail");}
-    }
-  } on FirebaseAuthException catch (e) {
-    onError("wrong mail or password");
-  }
-}
+// static void loginUser(String email, String password, Function onSuccess, Function onError) async {
+//   try {
+//     final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+//     credential.user!.sendEmailVerification();
+//     if(credential.user?.uid!=null){
+//       if(credential.user!.emailVerified){onSuccess();}
+//       else{onError("Please Veritify Your Mail");}
+//     }
+//   } on FirebaseAuthException catch (e) {
+//     onError("wrong mail or password");
+//   }
+// }
 static Future<UserModel?> readUser(String id) async {
   DocumentSnapshot<UserModel> userDoc =
   await getUsersCollection().doc(id).get();
